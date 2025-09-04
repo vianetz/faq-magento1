@@ -41,7 +41,7 @@ class Flagbit_Faq_Model_Mysql4_Faq extends Mage_Core_Model_Mysql4_Abstract {
 		if ($object->getStoreId()) {
 			$select->join(
 				array('nns' => $this->getTable('flagbit_faq/faq_store')),
-				$this->getMainTable() . '.item_id = `nns`.faq_id'
+				$this->getMainTable() . '.faq_id = `nns`.faq_id'
 			)->where('is_active=1 AND `nns`.store_id in (0, ?) ',
 			$object->getStoreId())->order('creation_time DESC')->limit(1);
 		}
