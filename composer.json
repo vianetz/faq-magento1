@@ -5,44 +5,8 @@
     "keywords": [
         "faq", "magento", "openmage"
     ],
-    "extra": {
-        "map": [
-            [
-                "src/app/code/community/Flagbit/Faq",
-                "app/code/community/Flagbit/Faq"
-            ],
-            [
-                "src/app/design/frontend/base/default/layout/faq.xml",
-                "app/design/frontend/base/default/layout/faq.xml"
-            ],
-            [
-                "src/app/design/frontend/base/default/template/faq",
-                "app/design/frontend/base/default/template/faq"
-            ],
-            [
-                "src/app/design/adminhtml/default/default/layout/flagbit_faq.xml",
-                "app/design/adminhtml/default/default/layout/flagbit_faq.xml"
-            ],
-            [
-                "src/app/etc/modules/Flagbit_Faq.xml",
-                "app/etc/modules/Flagbit_Faq.xml"
-            ],
-            [
-                "src/app/locale/de_DE/Flagbit_Faq.csv",
-                "app/locale/de_DE/Flagbit_Faq.csv"
-            ],
-            [
-                "src/app/locale/nl_NL/Flagbit_Faq.csv",
-                "app/locale/nl_NL/Flagbit_Faq.csv"
-            ],
-            [
-                "src/app/locale/ru_RU/Flagbit_Faq.csv",
-                "app/locale/ru_RU/Flagbit_Faq.csv"
-            ]
-        ]
-    },
     "require": {
-        "php": "^7.2|^8.0"
+        "php": "^8.2"
     },
     "require-dev": {
         "vianetz/coding-standards": "dev-master"

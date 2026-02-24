@@ -1,24 +1,16 @@
 <?php
+declare(strict_types=1);
+
 /**
  * FAQ for Magento
  *
  * @category   Flagbit
  * @package    Flagbit_Faq
  * @copyright  Copyright (c) 2009 Flagbit GmbH & Co. KG <magento@flagbit.de>
+ * @copyright  Copyright (c) 2020-26 vianetz - Dipl.-Ing. C. Massmann (https://www.vianetz.com)
  */
-
-/**
- * Category Resource Model for FAQ Items
- *
- * @category   Flagbit
- * @package    Flagbit_Faq
- * @author     Flagbit GmbH & Co. KG <magento@flagbit.de>
- */
-class Flagbit_Faq_Model_Mysql4_Category extends Mage_Core_Model_Mysql4_Abstract
+class Flagbit_Faq_Model_Resource_Category extends Mage_Core_Model_Resource_Db_Abstract
 {
-    /**
-     * Constructor
-     */
     protected function _construct()
     {
         $this->_init('flagbit_faq/category', 'category_id');
@@ -45,15 +37,10 @@ class Flagbit_Faq_Model_Mysql4_Category extends Mage_Core_Model_Mysql4_Abstract
         return $select;
     }
 
-    /**
-     * Sets the creation and update timestamps
-     *
-     * @param Mage_Core_Model_Abstract $object Current faq category
-     * @return Flagbit_Faq_Model_Mysql4_Category
-     */
-    protected function _beforeSave(Mage_Core_Model_Abstract $object)
+    /** Sets the creation and update timestamps */
+    protected function _beforeSave(Mage_Core_Model_Abstract $object): self
     {
-        if (!$object->getId()) {
+        if (! $object->getId()) {
             $object->setCreationTime(Mage::getSingleton('core/date')->gmtDate());
         }
         $object->setUpdateTime(Mage::getSingleton('core/date')->gmtDate());
@@ -61,11 +48,7 @@ class Flagbit_Faq_Model_Mysql4_Category extends Mage_Core_Model_Mysql4_Abstract
         return parent::_beforeSave($object);
     }
 
-    /**
-     * Assign page to store views
-     *
-     * @param Mage_Core_Model_Abstract $object
-     */
+    /** Assign page to store views */
     protected function _afterSave(Mage_Core_Model_Abstract $object)
     {
         $condition = $this->_getWriteAdapter()->quoteInto('category_id = ?', $object->getId());

@@ -1,27 +1,18 @@
 <?php
-/**
- * FAQ for Magento
- *
- * @category   Flagbit
- * @package    Flagbit_Faq
- * @copyright  Copyright (c) 2009 Flagbit GmbH & Co. KG <magento@flagbit.de>
- */
+declare(strict_types=1);
 
 /**
  * FAQ for Magento
  *
  * @category   Flagbit
  * @package    Flagbit_Faq
- * @author     Flagbit GmbH & Co. KG <magento@flagbit.de>
+ * @copyright  Copyright (c) 2009 Flagbit GmbH & Co. KG <magento@flagbit.de>
+ * @copyright  Copyright (c) 2020-26 vianetz - Dipl.-Ing. C. Massmann (https://www.vianetz.com)
  */
-class Flagbit_Faq_Model_Mysql4_Category_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
+class Flagbit_Faq_Model_Resource_Category_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
     protected $_previewFlag;
-    
-    /**
-     * Constructor
-     *
-     */
+
     protected function _construct()
     {
         $this->_init('flagbit_faq/category');
@@ -31,7 +22,7 @@ class Flagbit_Faq_Model_Mysql4_Category_Collection extends Mage_Core_Model_Mysql
      * Add Filter by store
      *
      * @param int|Mage_Core_Model_Store $store Store to be filtered
-     * @return Flagbit_Faq_Model_Mysql4_Category_Collection
+     * @return Flagbit_Faq_Model_Resource_Category_Collection
      */
     public function addStoreFilter($store)
     {

@@ -1,25 +1,16 @@
 <?php
-/**
- * FAQ for Magento
- *
- * @category   Flagbit
- * @package    Flagbit_Faq
- * @copyright  Copyright (c) 2009 Flagbit GmbH & Co. KG <magento@flagbit.de>
- */
+declare(strict_types=1);
 
 /**
  * FAQ for Magento
  *
  * @category   Flagbit
  * @package    Flagbit_Faq
- * @author     Flagbit GmbH & Co. KG <magento@flagbit.de>
+ * @copyright  Copyright (c) 2009 Flagbit GmbH & Co. KG <magento@flagbit.de>
+ * @copyright  Copyright (c) 2020-26 vianetz - Dipl.-Ing. C. Massmann (https://www.vianetz.com)
  */
 class Flagbit_Faq_Block_Adminhtml_Item_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
-    /**
-     * Constructor of Grid
-     *
-     */
     public function __construct()
     {
         parent::__construct();
@@ -118,7 +109,7 @@ class Flagbit_Faq_Block_Adminhtml_Item_Grid extends Mage_Adminhtml_Block_Widget_
     /**
      * Helper function to add store filter condition
      *
-     * @param Mage_Core_Model_Mysql4_Collection_Abstract $collection Data collection
+     * @param Mage_Core_Model_Resource_Db_Collection_Abstract $collection Data collection
      * @param Mage_Adminhtml_Block_Widget_Grid_Column $column Column information to be filtered
      */
     protected function _filterStoreCondition($collection, $column)

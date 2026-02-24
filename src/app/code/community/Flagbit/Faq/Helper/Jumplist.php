@@ -39,7 +39,7 @@ class Flagbit_Faq_Helper_Jumplist extends Mage_Core_Helper_Abstract implements C
 		$this->items[self::KEY_OTHER] = new Flagbit_Faq_Helper_JumplistItem(self::KEY_OTHER);
 	}
 	
-	public function setFaqItems(Flagbit_Faq_Model_Mysql4_Faq_Collection $items)
+	public function setFaqItems(Flagbit_Faq_Model_Resource_Faq_Collection $items)
 	{
 		foreach($items as $item)
 		{

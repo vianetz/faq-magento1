@@ -4,7 +4,7 @@
         <Flagbit_Faq>
             <active>true</active>
             <codePool>community</codePool>
-            <version>1.4.0</version>
+            <version>1.5.0</version>
         </Flagbit_Faq>
     </modules>
 
@@ -64,10 +64,10 @@
         <models>
             <flagbit_faq>
                 <class>Flagbit_Faq_Model</class>
-                <resourceModel>flagbit_faq_mysql4</resourceModel>
+                <resourceModel>flagbit_faq_resource</resourceModel>
             </flagbit_faq>
-            <flagbit_faq_mysql4>
-                <class>Flagbit_Faq_Model_Mysql4</class>
+            <flagbit_faq_resource>
+                <class>Flagbit_Faq_Model_Resource</class>
                 <entities>
                     <category>
                         <table>faq_category</table>
@@ -85,7 +85,7 @@
                         <table>faq_store</table>
                     </faq_store>
                 </entities>
-            </flagbit_faq_mysql4>
+            </flagbit_faq_resource>
         </models>
 
         <resources>
