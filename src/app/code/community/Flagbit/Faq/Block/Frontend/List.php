@@ -18,7 +18,7 @@ class Flagbit_Faq_Block_Frontend_List extends Mage_Core_Block_Template
         if ($head = $this->getLayout()->getBlock('head')) {
             $currentTitle = $head->getTitle();
             $currentTitle = str_ireplace(Mage::getStoreConfig('design/head/title_suffix'), '', $currentTitle);
-            $head->setTitle($this->htmlEscape($this->__('Frequently Asked Questions')) . ' - ' . $currentTitle);
+            $head->setTitle($this->escapeHtml($this->__('Frequently Asked Questions')) . ' - ' . $currentTitle);
         }
     }
 
@@ -142,8 +142,8 @@ class Flagbit_Faq_Block_Frontend_List extends Mage_Core_Block_Template
     }
 
     public function encodeQuestionForUrl(string $question): string
-	{
-		return urlencode(
+    {
+        return urlencode(
             trim(
                 str_replace(
                     array(' ', 'ä',  'ö',  'ü',  'ß',  '.', '/', ';', ':', '=', '?', '__'),
@@ -152,5 +152,5 @@ class Flagbit_Faq_Block_Frontend_List extends Mage_Core_Block_Template
                 ), ' _'
             )
         );
-	}
+    }
 }
